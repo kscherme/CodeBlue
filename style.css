@@ -1,8 +1,14 @@
-.badge.badge-primary{
+#status-badge{
     position: absolute;
     right: 0px;
     top: 0px;
     width: 25px;
     height: 25px;
     border-radius: 50%;
+}
+.bold{
+    font-weight: 600;
+}
+.large-font{
+    font-size: 1.3rem;
 }

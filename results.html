@@ -12,7 +12,7 @@
               	<div class="btn card" type="button" data-toggle="modal" data-target="#profileModal">
                 	<div class="card-body text-center">
 						<div>
-							<div class="m-1 badge badge-primary"> </div>  
+							<div id="status-badge" class="m-1 badge badge-primary"> </div>  
 							<img src="puppy.jpg" name="aboutme" width="140" height="140" class="rounded-circle">
 						</div>
 						<h5 class="card-title text-center">NAME</h5>
@@ -23,7 +23,7 @@
 				<div class="btn card" type="button" data-toggle="modal" data-target="#profileModal">
 						<div class="card-body text-center">
 						<div>
-							<div class="m-1 badge badge-primary"> </div>  
+							<div id="status-badge" class="m-1 badge badge-primary"> </div>  
 							<img src="puppy.jpg" name="aboutme" width="140" height="140" class="rounded-circle">
 						</div>
 						<h5 class="card-title text-center">NAME</h5>
@@ -34,7 +34,7 @@
 				<div class="btn card" type="button" data-toggle="modal" data-target="#profileModal">
 						<div class="card-body text-center">
 						<div>
-							<div class="m-1 badge badge-primary"> </div>  
+							<div id="status-badge" class="m-1 badge badge-primary"> </div>  
 							<img src="puppy.jpg" name="aboutme" width="140" height="140" class="rounded-circle">
 						</div>
 						<h5 class="card-title text-center">NAME</h5>
@@ -49,17 +49,34 @@
 				<div class="modal-dialog modal-dialog-centered" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-						  	<h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+						  	<h5 class="modal-title" id="exampleModalCenterTitle">Name</h5>
 						  	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
 						<div class="modal-body">
-						  ...
+							<div class="text-center large-font"> 
+								<img src="puppy.jpg" name="aboutme" width="140" height="140" class="rounded-circle"><br>
+								<div class="skills my-2">
+									<span class="bold">Skills</span>
+									<span class="badge badge-primary">AWS</span>
+									<span class="badge badge-secondary">Web</span>
+									<span class="badge badge-success">Mobile</span>
+								</div>
+								<p><span>Status: </span><span class="text-primary">Available</span></p>
+							</div>
+							<hr>
+							<div class="text-left">
+								<p><span>Perferred Method of Communication: </span><a href="">Email</a></p>
+								<p><span>Office: </span>D.C.</p>
+							</div>
+							<hr>
+							<p><span>AWS: </span>S3</p>
+							<p><span>Web: </span>JS, Angular, Node</p>
+							<p><span>Mobile: </span>Android</p>
 						</div>
 						<div class="modal-footer">
 						  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						  <button type="button" class="btn btn-primary">Save changes</button>
 						</div>
 					</div>
 				</div>
