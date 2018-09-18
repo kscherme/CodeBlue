@@ -1,5 +1,6 @@
 <html>
     <head>
+        <title>CodeBlue</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="style.css">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -7,6 +8,30 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><span class="text-primary bold">CodeBlue</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> 
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="mr-3">
+                        <form class="form-inline my-2 my-lg-0">
+                            <div class="form-group">
+                                <label class="mr-2" for="availabilityFormControlSelect">I am </label>
+                                <select class="form-control" id="availabilityFormControlSelect">
+                                    <option>Available</option>
+                                    <option>Unavailable</option>
+                                </select>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="nav-item mr-auto">
+                        <a class="nav-link mr-2 text-primary" href="#">Profile</a>
+                    </li>    
+                </ul>
+            </div>
+        </nav>
         <div class="jumbotron vertical-center">
             <div class="container">
                 <h1>I need help with...</h1>
