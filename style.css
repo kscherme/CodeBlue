@@ -44,10 +44,32 @@
     background-color: white;
 }
 
+.full-width{
+    width: 100%;
+}
 .green{
     background-color: #00C851;
 }
 
 .red{
     background-color: #ff4444;
+}
+
+.white-text{
+    color:white;
+}
+.aws-color{
+    background-color: #CF0E5B;
+}
+
+.web-color{
+    background-color: #E2A52E;
+}
+
+.mobile-color{
+    background-color: #3AAE84;
+}
+
+.db-color{
+    background-color: #6EC4CB;
 }
