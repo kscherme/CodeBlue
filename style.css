@@ -43,3 +43,11 @@
     border-radius: .25rem;
     background-color: white;
 }
+
+.green{
+    background-color: #00C851;
+}
+
+.red{
+    background-color: #ff4444;
+}
