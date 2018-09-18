@@ -73,3 +73,39 @@
 .db-color{
     background-color: #6EC4CB;
 }
+
+.git-color{
+    background-color: #3f0f3f;
+}
+
+.oo-color{
+    background-color: #e51670;
+}
+
+.mlai-color{
+    background-color: #239CB2;
+}
+
+.ux-color{
+    background-color: #e0b83e;
+}
+
+.algorithms-color{
+    background-color: #76be9f;
+}
+
+.system-color{
+    background-color: #563e58;
+}
+
+.os-color{
+    background-color: gray;
+}
+
+.shell-color{
+    background-color: #980746;
+}
+
+.other-color{
+    background-color: white;
+}
