@@ -10,9 +10,9 @@ class Home extends React.Component {
                      {name:"Operating Systems", color: "os-color"}, {name: "Shell", color: "shell-color"}, 
                      {name: "Other", color: "other-color"}];
 
-    public handleClick() {
+    public handleClick(name:any, e:any) {
         // tslint:disable-next-line:no-console
-        console.log("I was clicked!!")
+        console.log("I was clicked!!" + name);
     }
   public render() {
     return (
@@ -47,7 +47,7 @@ class Home extends React.Component {
                         <h1>I need help with...</h1>
                         <div className="col-md-12">
                             {this.topics.map(topic=>
-                                <button onClick={this.handleClick} type="button" className={"m-1 btn btn-labeled btn-large text-white " + topic.color} key={topic.color}>
+                                <button onClick={this.handleClick.bind(topic, topic.name)} type="button" className={"m-1 btn btn-labeled btn-large text-white " + topic.color} key={topic.color}>
                                     <span className="btn-label"/>{topic.name}
                                 </button>
                             )}
