@@ -37,8 +37,8 @@
     font-size: 1.3rem;
 }
 
-.jumbotron{
-    height: 200vh;
+.gray-bg{
+    background-color: #E9ECEF;
 }
 
 .card {
