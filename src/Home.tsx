@@ -2,6 +2,18 @@ import * as React from 'react';
 import './Home.css';
 
 class Home extends React.Component {
+    public topics = [{name: 'AWS', color: 'aws-color'}, {name: 'Web', color: 'web-color'}, 
+                     {name: 'Mobile', color: 'mobile-color'}, {name: 'Databases', color: 'db-color'},
+                     {name: 'Git', color: 'git-color'}, {name: 'Object-Oriented', color: 'oo-color'}, 
+                     {name: 'Machine Learning/AI', color: 'mlai-color'}, {name: "UX", color: "ux-color"}, 
+                     {name: "Algorithms", color: "algorithms-color"}, {name:"System Design", color:"system-color"}, 
+                     {name:"Operating Systems", color: "os-color"}, {name: "Shell", color: "shell-color"}, 
+                     {name: "Other", color: "other-color"}];
+
+    public handleClick() {
+        // tslint:disable-next-line:no-console
+        console.log("I was clicked!!")
+    }
   public render() {
     return (
         <div className="gray-bg">
@@ -34,46 +46,11 @@ class Home extends React.Component {
                     <div className="container">
                         <h1>I need help with...</h1>
                         <div className="col-md-12">
-                            <button type="button" className="m-1 btn btn-labeled btn-large aws-color text-white">
-                                <span className="btn-label"/>AWS
-                            </button>
-                            <button type="button" className="m-1 btn btn-labeled btn-large web-color text-white">
-                                <span className="btn-label"/>Web
-                            </button>
-                            <button type="button" className="m-1 btn btn-labeled btn-large mobile-color text-white">
-                                <span className="btn-label"/>Mobile
-                            </button>    
-                            <br />
-                            <button type="button" className="m-1 btn btn-labeled btn-large db-color text-white">
-                                <span className="btn-label"/>Databases
-                            </button> 
-                            <button type="button" className="m-1 btn btn-labeled btn-large git-color text-white">
-                                <span className="btn-label"/>git
-                            </button>    
-                            <button type="button" className="m-1 btn btn-labeled btn-large oo-color text-white">
-                                <span className="btn-label"/>Object Oriented 
-                            </button>
-                            <button type="button" className="m-1 btn btn-labeled btn-large mlai-color text-white">
-                                <span className="btn-label"/>Machine Learning / AI
-                            </button> 
-                            <button type="button" className="m-1 btn btn-labeled btn-large ux-color text-white">
-                                <span className="btn-label"/>UX
-                            </button>  
-                            <button type="button" className="m-1 btn btn-labeled btn-large algorithms-color text-white">
-                                <span className="btn-label"/>Algorithms
-                            </button>    
-                            <button type="button" className="m-1 btn btn-labeled btn-large system-color text-white">
-                                <span className="btn-label"/>System Design
-                            </button>   
-                            <button type="button" className="m-1 btn btn-labeled btn-large os-color text-white">
-                                <span className="btn-label"/>Operating Systems
-                            </button>        
-                            <button type="button" className="m-1 btn btn-labeled btn-large shell-color text-white">
-                                <span className="btn-label"/>Shell
-                            </button> 
-                            <button type="button" className="m-1 btn btn-labeled btn-large other-color">
-                                <span className="btn-label"/>Other
-                            </button> 
+                            {this.topics.map(topic=>
+                                <button onClick={this.handleClick} type="button" className={"m-1 btn btn-labeled btn-large text-white " + topic.color} key={topic.color}>
+                                    <span className="btn-label"/>{topic.name}
+                                </button>
+                            )}
                         </div>
                     </div>
                 </div>
