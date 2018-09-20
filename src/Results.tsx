@@ -1,7 +1,6 @@
 import * as React from 'react';
 import puppy from './puppy.jpg';
 import './Results.css';
-// import topics from './Skills';
 
 
 interface IResultStates{
@@ -13,13 +12,29 @@ interface IResultStates{
     activePersonUid: string
 } 
 
+
 class Results extends React.Component<any,IResultStates> {
 
-    public persons = [{name: 'Joe Smith', level: 'C1', office: 'Washington D.C.', img: puppy, uid: 'jsmith', skills: ['aws', 'web'], desc: ['S3', 'Angular']},
-                      {name: 'Jane Smith', level: 'A1', office: 'Chicago', img: puppy, uid: 'jsmith', skills: ['aws', 'web'], desc: ['S3', 'Angular']},
-                      {name: 'Mark Jones', level: 'P3', office: 'Dallas', img: puppy, uid: 'jsmith', skills: ['aws', 'web'], desc: ['S3', 'Angular']}];
+    public topics = [{ name: 'AWS', color: 'aws-color' }, { name: 'Web', color: 'web-color' },
+    { name: 'Mobile', color: 'mobile-color' }, { name: 'Databases', color: 'db-color' },
+    { name: 'Git', color: 'git-color' }, { name: 'Object-Oriented', color: 'oo-color' },
+    { name: 'Machine Learning/AI', color: 'mlai-color' }, { name: "UX", color: "ux-color" },
+    { name: "Algorithms", color: "algorithms-color" }, { name: "System Design", color: "system-color" },
+    { name: "Operating Systems", color: "os-color" }, { name: "Shell", color: "shell-color" },
+    { name: "Other", color: "other-color" }];
+
+    // Results:topics ={
+    //     PropTypes.shape(
+    //         name: string,
+    //         color: string
+    //     )
+    // }
+    public persons = [{name: 'Joe Smith', level: 'C1', office: 'Washington D.C.', img: puppy, uid: 'jsmith', skills: ['AWS', 'Web'], desc: ['S3', 'Angular']},
+                      {name: 'Jane Smith', level: 'A1', office: 'Chicago', img: puppy, uid: 'jsmith', skills: ['Mobile', 'Web'], desc: ['Android, iOS', 'React']},
+                      {name: 'Mark Jones', level: 'P3', office: 'Dallas', img: puppy, uid: 'jsmith', skills: ['Machine Learning / AI', 'UX'], desc: ['made own bot', 'User-centered design']}];
     
-    
+    public colors = [{'AWS': 'aws-color', 'Web': 'web-color'}];
+
     constructor(props:any) {
         super(props);
         this.state = {
@@ -44,6 +59,7 @@ class Results extends React.Component<any,IResultStates> {
 
          })
     }
+
 
   public render() {
     return (
@@ -113,9 +129,12 @@ class Results extends React.Component<any,IResultStates> {
                                 <div className="text-center large-font">
                                     <img src={this.state.activePersonImg} alt="aboutme" width="140" height="140" className="rounded-circle"/><br />
                                     <div className="skills my-2">
-                                        <span className="m-1 badge aws-color text-white">AWS</span>
-                                        <span className="m-1 badge web-color text-white">Web</span>
-                                        <span className="m-1 badge mobile-color text-white">Mobile</span>
+                                    {/* {this.state.activePersonSkills.map((skill) =>
+                                        {this.topics.map(topic =>
+                                            {if {skill} == {topic.name}}
+                                        )}
+                                    )} */}
+
                                     </div>
                                     <div>
                                         <button type="button" className="btn git-color text-white btn-lg raised-btn"><i className="fab fa-slack"/> Slack me!</button>

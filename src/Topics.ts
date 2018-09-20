@@ -13,3 +13,5 @@ export let topics = [
     { name: "Shell", color: "shell-color", selected: false },
     { name: "Other", color: "other-color", selected: false }
 ];
+
+export default topics;
