@@ -4,6 +4,7 @@ import './Results.css';
 
 
 interface IResultStates{
+    activePersonColors: string[],
     activePersonImg: string ,
     activePersonName: string,
     activePersonOffice: string,
@@ -15,29 +16,15 @@ interface IResultStates{
 
 class Results extends React.Component<any,IResultStates> {
 
-    public topics = [{ name: 'AWS', color: 'aws-color' }, { name: 'Web', color: 'web-color' },
-    { name: 'Mobile', color: 'mobile-color' }, { name: 'Databases', color: 'db-color' },
-    { name: 'Git', color: 'git-color' }, { name: 'Object-Oriented', color: 'oo-color' },
-    { name: 'Machine Learning/AI', color: 'mlai-color' }, { name: "UX", color: "ux-color" },
-    { name: "Algorithms", color: "algorithms-color" }, { name: "System Design", color: "system-color" },
-    { name: "Operating Systems", color: "os-color" }, { name: "Shell", color: "shell-color" },
-    { name: "Other", color: "other-color" }];
-
-    // Results:topics ={
-    //     PropTypes.shape(
-    //         name: string,
-    //         color: string
-    //     )
-    // }
-    public persons = [{name: 'Joe Smith', level: 'C1', office: 'Washington D.C.', img: puppy, uid: 'jsmith', skills: ['AWS', 'Web'], desc: ['S3', 'Angular']},
-                      {name: 'Jane Smith', level: 'A1', office: 'Chicago', img: puppy, uid: 'jsmith', skills: ['Mobile', 'Web'], desc: ['Android, iOS', 'React']},
-                      {name: 'Mark Jones', level: 'P3', office: 'Dallas', img: puppy, uid: 'jsmith', skills: ['Machine Learning / AI', 'UX'], desc: ['made own bot', 'User-centered design']}];
+    public persons = [{name: 'Joe Smith', level: 'C1', office: 'Washington D.C.', img: puppy, uid: 'jsmith', skills: ['AWS', 'Web'], desc: ['S3', 'Angular'], colors: ['aws-color', 'web-color']},
+                      {name: 'Jane Smith', level: 'A1', office: 'Chicago', img: puppy, uid: 'jsmith', skills: ['Mobile', 'Web'], desc: ['Android, iOS', 'React'], colors: ['mobile-color', 'web-color']},
+                      {name: 'Mark Jones', level: 'P3', office: 'Dallas', img: puppy, uid: 'jsmith', skills: ['Web', 'UX'], desc: ['Javascript, HTML, Css', 'User-centered design'], colors: ['web-color','ux-color']}];
     
-    public colors = [{'AWS': 'aws-color', 'Web': 'web-color'}];
 
     constructor(props:any) {
         super(props);
         this.state = {
+            activePersonColors: [],
             activePersonImg: '',
             activePersonName: '',
             activePersonOffice: '',
@@ -50,6 +37,7 @@ class Results extends React.Component<any,IResultStates> {
     
     public openModal(person:any){
         this.setState({
+            activePersonColors: person.colors,
             activePersonImg: person.img,
             activePersonName: person.name,
             activePersonOffice: person.office,
@@ -91,8 +79,8 @@ class Results extends React.Component<any,IResultStates> {
             <div className="container">
                 <div className="row my-5 text-center">
                     <div className="col">
-                        <div className="m-1 btn btn-labeled btn-large aws-color text-white" style={{ cursor: 'default' }}>
-                            <span className="btn-label"/>AWS
+                        <div className="m-1 btn btn-labeled btn-large web-color text-white" style={{ cursor: 'default' }}>
+                            <span className="btn-label"/>Web
                         </div>
                     </div>
                 </div>
@@ -129,12 +117,8 @@ class Results extends React.Component<any,IResultStates> {
                                 <div className="text-center large-font">
                                     <img src={this.state.activePersonImg} alt="aboutme" width="140" height="140" className="rounded-circle"/><br />
                                     <div className="skills my-2">
-                                    {/* {this.state.activePersonSkills.map((skill) =>
-                                        {this.topics.map(topic =>
-                                            {if {skill} == {topic.name}}
-                                        )}
-                                    )} */}
-
+                                    {this.state.activePersonSkills.map((skill, index) =>
+                                        <span key={index} className={"m-1 badge text-white " + this.state.activePersonColors[index]}>{skill}</span>                                    )}
                                     </div>
                                     <div>
                                         <button type="button" className="btn git-color text-white btn-lg raised-btn"><i className="fab fa-slack"/> Slack me!</button>
