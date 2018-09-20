@@ -1,15 +1,9 @@
 import * as React from 'react';
 import './Skills.css';
+import {topics} from './Topics'
 
 class Skills extends React.Component {
-    public topics = [{ name: 'AWS', color: 'aws-color', selected: false }, { name: 'Web', color: 'web-color', selected: false },
-    { name: 'Mobile', color: 'mobile-color', selected: false }, { name: 'Databases', color: 'db-color', selected: false },
-    { name: 'Git', color: 'git-color', selected: false }, { name: 'Object-Oriented', color: 'oo-color', selected: false },
-    { name: 'Machine Learning/AI', color: 'mlai-color', selected: false }, { name: "UX", color: "ux-color", selected: false },
-    { name: "Algorithms", color: "algorithms-color", selected: false }, { name: "System Design", color: "system-color", selected: false },
-    { name: "Operating Systems", color: "os-color", selected: false }, { name: "Shell", color: "shell-color", selected: false },
-    { name: "Other", color: "other-color", selected: false }];
-
+    
     constructor(props:any) {
         super(props);
         this.state = {};
@@ -17,14 +11,14 @@ class Skills extends React.Component {
 
     public handleClick(topic: any) {
         document.getElementsByClassName(topic.name)[0].classList.toggle('pressed-button');
-        const topicIndex = this.topics.findIndex(c =>  
+        const topicIndex = topics.findIndex(c =>  
             c.name === topic.name
         );
-        if (this.topics[topicIndex].selected){
-            this.topics[topicIndex].selected = false;
+        if (topics[topicIndex].selected){
+            topics[topicIndex].selected = false;
         }
         else {
-            this.topics[topicIndex].selected = true;
+            topics[topicIndex].selected = true;
         }
     }
 
@@ -56,7 +50,7 @@ class Skills extends React.Component {
                                     <h2 className="card-title text-center">Sign Up</h2>
                                     <div>Choose your Skills:</div>
                                     <div className="row">
-                                        {this.topics.map(topic =>
+                                        {topics.map(topic =>
                                             <div className="col-4 my-3" key={topic.name}>
                                                 {/* tslint:disable-next-line jsx-no-lambda */}
                                                 <button onClick={() => this.handleClick(topic)} className={"btn full-width white-text btn-lg " + topic.color + " " + topic.name} type="button" key={topic.name}>
