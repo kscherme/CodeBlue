@@ -19,7 +19,7 @@ class Home extends React.Component {
             <div className="gray-bg">
                 <div className="Home">
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                        <a className="navbar-brand" href="#"><span className="text-primary bold">CodeBlue</span></a>
+                        <a className="navbar-brand" href="/"><span className="text-primary bold">CodeBlue</span></a>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon" />
                         </button>
@@ -37,7 +37,7 @@ class Home extends React.Component {
                                     </form>
                                 </li>
                                 <li className="nav-item mr-auto">
-                                    <a className="nav-link mr-2 text-primary" href="signup.html">Profile</a>
+                                    <a className="nav-link mr-2 text-primary" href="/profile">Profile</a>
                                 </li>
                             </ul>
                         </div>
@@ -47,9 +47,11 @@ class Home extends React.Component {
                             <h1>I need help with...</h1>
                             <div className="col-md-12">
                                 {this.topics.map(topic =>
-                                    <button onClick={this.handleClick.bind(topic, topic.name)} type="button" className={"m-1 btn btn-labeled btn-large text-white " + topic.color} key={topic.color}>
-                                        <span className="btn-label" />{topic.name}
-                                    </button>
+                                    <a href="/results" key={topic.color}>
+                                        <button onClick={this.handleClick.bind(topic, topic.name)} type="button" className={"m-1 btn btn-labeled btn-large text-white " + topic.color} key={topic.color}>
+                                            <span className="btn-label" />{topic.name}
+                                        </button>
+                                    </a>
                                 )}
                             </div>
                         </div>

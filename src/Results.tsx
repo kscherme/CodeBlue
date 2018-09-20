@@ -65,7 +65,7 @@ class Results extends React.Component<any,IResultStates> {
     return (
         <div className="gray-bg">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="#"><span className="text-primary bold">CodeBlue</span></a>
+                <a className="navbar-brand" href="/"><span className="text-primary bold">CodeBlue</span></a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"/>
                 </button>
@@ -83,7 +83,7 @@ class Results extends React.Component<any,IResultStates> {
                             </form>
                         </li>
                         <li className="nav-item mr-auto">
-                            <a className="nav-link mr-2 text-primary" href="signup.html">Profile</a>
+                            <a className="nav-link mr-2 text-primary" href="/profile">Profile</a>
                         </li>
                     </ul>
                 </div>
