@@ -1,6 +1,7 @@
 import * as React from 'react';
 import puppy from './puppy.jpg';
 import './Results.css';
+// import topics from './Skills';
 
 
 interface IResultStates{
@@ -8,14 +9,15 @@ interface IResultStates{
     activePersonName: string,
     activePersonOffice: string,
     activePersonSkills: string[],
+    activePersonSkillsDesc: string[],
     activePersonUid: string
 } 
 
 class Results extends React.Component<any,IResultStates> {
 
-    public persons = [{name: 'Joe Smith', level: 'C1', office: 'Washington D.C.', img: puppy, uid: 'jsmith', skills: ['aws', 'web']},
-                      {name: 'Jane Smith', level: 'A1', office: 'Chicago', img: puppy, uid: 'jsmith', skills: ['aws', 'web']},
-                      {name: 'Mark Jones', level: 'P3', office: 'Dallas', img: puppy, uid: 'jsmith', skills: ['aws', 'web']}];
+    public persons = [{name: 'Joe Smith', level: 'C1', office: 'Washington D.C.', img: puppy, uid: 'jsmith', skills: ['aws', 'web'], desc: ['S3', 'Angular']},
+                      {name: 'Jane Smith', level: 'A1', office: 'Chicago', img: puppy, uid: 'jsmith', skills: ['aws', 'web'], desc: ['S3', 'Angular']},
+                      {name: 'Mark Jones', level: 'P3', office: 'Dallas', img: puppy, uid: 'jsmith', skills: ['aws', 'web'], desc: ['S3', 'Angular']}];
     
     
     constructor(props:any) {
@@ -25,6 +27,7 @@ class Results extends React.Component<any,IResultStates> {
             activePersonName: '',
             activePersonOffice: '',
             activePersonSkills: [],
+            activePersonSkillsDesc: [],
             activePersonUid: ''
         }
     }
@@ -36,6 +39,7 @@ class Results extends React.Component<any,IResultStates> {
             activePersonName: person.name,
             activePersonOffice: person.office,
             activePersonSkills: person.skills,
+            activePersonSkillsDesc: person.desc,
             activePersonUid: person.uid
 
          })
@@ -109,17 +113,17 @@ class Results extends React.Component<any,IResultStates> {
                                 <div className="text-center large-font">
                                     <img src={this.state.activePersonImg} alt="aboutme" width="140" height="140" className="rounded-circle"/><br />
                                     <div className="skills my-2">
-                                        <span className="badge aws-color text-white">AWS</span>
-                                        <span className="badge web-color text-white">Web</span>
-                                        <span className="badge mobile-color text-white">Mobile</span>
+                                        <span className="m-1 badge aws-color text-white">AWS</span>
+                                        <span className="m-1 badge web-color text-white">Web</span>
+                                        <span className="m-1 badge mobile-color text-white">Mobile</span>
                                     </div>
                                     <div>
                                         <button type="button" className="btn git-color text-white btn-lg raised-btn"><i className="fab fa-slack"/> Slack me!</button>
                                     </div>
                                 </div>
                                 <hr />
-                                {this.state.activePersonSkills.map((skill) =>
-                                        <p key={skill}><span>{skill}: </span>JS, Angular, Node</p>
+                                {this.state.activePersonSkills.map((skill, index) =>
+                                    <p key={index}><span>{skill}: </span>{this.state.activePersonSkillsDesc[index]}</p>
                                     )}
                             </div>
                             <div className="modal-footer">
