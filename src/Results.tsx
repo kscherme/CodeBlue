@@ -1,4 +1,6 @@
 import * as React from 'react';
+import emma from './emma.jpg';
+import katie from './katie.jpg';
 import puppy from './puppy.jpg';
 import './Results.css';
 
@@ -17,8 +19,8 @@ interface IResultStates{
 class Results extends React.Component<any,IResultStates> {
 
     public persons = [{name: 'Joe Smith', level: 'C1', office: 'Washington D.C.', img: puppy, uid: 'jsmith', skills: ['AWS', 'Web'], desc: ['S3', 'Angular'], colors: ['aws-color', 'web-color']},
-                      {name: 'Jane Smith', level: 'A1', office: 'Chicago', img: puppy, uid: 'jsmith', skills: ['Mobile', 'Web'], desc: ['Android, iOS', 'React'], colors: ['mobile-color', 'web-color']},
-                      {name: 'Mark Jones', level: 'P3', office: 'Dallas', img: puppy, uid: 'jsmith', skills: ['Web', 'UX'], desc: ['Javascript, HTML, Css', 'User-centered design'], colors: ['web-color','ux-color']}];
+                      {name: 'Katie Schermerhorn', level: 'A1', office: 'Chicago', img: katie, uid: 'UCJULMUP6', skills: ['Mobile', 'Web'], desc: ['Android, iOS', 'React'], colors: ['mobile-color', 'web-color']},
+                      {name: 'Emma Fass', level: 'P3', office: 'Dallas', img: emma, uid: 'UCLN8GQ84', skills: ['Web', 'UX'], desc: ['Javascript, HTML, Css', 'User-centered design'], colors: ['web-color','ux-color']}];
     
 
     constructor(props:any) {
@@ -118,11 +120,11 @@ class Results extends React.Component<any,IResultStates> {
                                     <img src={this.state.activePersonImg} alt="aboutme" width="140" height="140" className="rounded-circle"/><br />
                                     <div className="skills my-2">
                                     {this.state.activePersonSkills.map((skill, index) =>
-                                        <span key={index} className={"m-1 badge text-white " + this.state.activePersonColors[index]}>{skill}</span>                                    )}
+                                        <span key={index} className={"m-1 badge text-white " + this.state.activePersonColors[index]}>{skill}</span>                                    
+                                        )}
                                     </div>
                                     <div>
-                                        <button type="button" className="btn git-color text-white btn-lg raised-btn"><i className="fab fa-slack"/> Slack me!</button>
-                                    </div>
+                                    <a href={"slack://user?team={'T024F3C1G'}&id={"+this.state.activePersonUid+"}"}><button type="button" className="btn git-color text-white btn-lg raised-btn"><i className="fab fa-slack" /> Slack me!</button></a>                                    </div>
                                 </div>
                                 <hr />
                                 {this.state.activePersonSkills.map((skill, index) =>
