@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './Login.css';
+import { Link } from 'react-router-dom'; 
 
 class Login extends React.Component {
 
@@ -13,14 +14,14 @@ class Login extends React.Component {
                 <div className="Home">
                     {/* NavBar */}
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                        <a className="navbar-brand" href="/"><span className="text-primary bold"/>CodeBlue</a>
+                        <Link className="navbar-brand" to="/"><span className="text-primary bold"/>CodeBlue</Link>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"/>
                         </button> 
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item mr-auto">
-                                    <a className="nav-link mr-2 text-primary" href="/profile">Sign Up</a>
+                                    <Link className="nav-link mr-2 text-primary" to="/profile">Sign Up</Link>
                                 </li>    
                             </ul>
                         </div>
@@ -42,14 +43,14 @@ class Login extends React.Component {
                                                 <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
                                             </div>
                                             <div className="text-center">
-                                                <a href="/home">
+                                                <Link to="/home">
                                                     <button type="submit" className="btn btn-primary btn-lg btn-block">Submit</button>
-                                                </a>
+                                                </Link>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
-                                <p className="card-text text-center my-3">New to CodeBlue? <a href="/signup">Make an account here.</a></p>
+                                <p className="card-text text-center my-3">New to CodeBlue? <Link to="/signup">Make an account here.</Link></p>
                             </div>
                         </div>
                     </div>

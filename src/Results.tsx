@@ -3,6 +3,7 @@ import emma from './emma.jpg';
 import katie from './katie.jpg';
 import puppy from './puppy.jpg';
 import './Results.css';
+import { Link } from 'react-router-dom'; 
 
 
 interface IResultStates{
@@ -55,7 +56,7 @@ class Results extends React.Component<any,IResultStates> {
     return (
         <div className="gray-bg">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="/"><span className="text-primary bold">CodeBlue</span></a>
+                <Link className="navbar-brand" to="/"><span className="text-primary bold">CodeBlue</span></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"/>
                 </button>
@@ -73,7 +74,7 @@ class Results extends React.Component<any,IResultStates> {
                             </form>
                         </li>
                         <li className="nav-item mr-auto">
-                            <a className="nav-link mr-2 text-primary" href="/profile">Profile</a>
+                            <Link className="nav-link mr-2 text-primary" to="/">Log Out</Link>
                         </li>
                     </ul>
                 </div>

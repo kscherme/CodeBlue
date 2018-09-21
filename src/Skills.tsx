@@ -1,6 +1,8 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom' 
 import './Skills.css';
-import {topics} from './Topics'
+import {topics} from './Topics';
+
 
 class Skills extends React.Component {
     
@@ -28,14 +30,14 @@ class Skills extends React.Component {
                 <div className="Home">
                     {/* NavBar */}
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                        <a className="navbar-brand" href="/"><span className="text-primary bold"/>CodeBlue</a>
+                        <Link className="navbar-brand" to="/"><span className="text-primary bold"/>CodeBlue</Link>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"/>
                         </button> 
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item mr-auto">
-                                    <a className="nav-link mr-2 text-primary" href="/profile">Sign Up</a>
+                                    <Link className="nav-link mr-2 text-primary" to="/profile">Sign Up</Link>
                                 </li>    
                             </ul>
                         </div>
@@ -60,9 +62,9 @@ class Skills extends React.Component {
                                         )}
                                     </div>
                                     <div className="text-center">
-                                        <a href="/details">
+                                        <Link to="/details">
                                             <button type="submit" className="btn btn-primary btn-lg">Next</button>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
