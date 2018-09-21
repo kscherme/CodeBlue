@@ -50,7 +50,7 @@ class Login extends React.Component {
                                         </form>
                                     </div>
                                 </div>
-                                <p className="card-text text-center my-3">New to CodeBlue? <Link to="/signup">Make an account here.</Link></p>
+                                <p className="card-text text-center my-3">New to CodeBlue? <Link to="/profile">Make an account here.</Link></p>
                             </div>
                         </div>
                     </div>
