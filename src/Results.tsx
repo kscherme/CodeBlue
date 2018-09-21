@@ -125,7 +125,7 @@ class Results extends React.Component<any,IResultStates> {
                                         )}
                                     </div>
                                     <div>
-                                    <a href={"slack://user?team={'T024F3C1G'}&id={"+this.state.activePersonUid+"}"}><button type="button" className="btn git-color text-white btn-lg raised-btn"><i className="fab fa-slack" /> Slack me!</button></a>                                    </div>
+                                    <a href={"https://slack.com/app_redirect?channel="+this.state.activePersonUid}><button type="button" className="btn git-color text-white btn-lg raised-btn"><i className="fab fa-slack" /> Slack me!</button></a>                                    </div>
                                 </div>
                                 <hr />
                                 {this.state.activePersonSkills.map((skill, index) =>
